@@ -1,0 +1,5 @@
+streamlit
+numpy
+pandas
+streamlit-option-menu
+joblib
