@@ -15,6 +15,14 @@ with st.sidebar:
         options=["Homepage","Crop Yield Predictor"],
         icons=["house-fill","flower1"]
     )
+try:
+    working_dir = os.path.dirname(os.path.abspath(__file__))
+    model_path = os.path.join(working_dir, 'ensemble.sav')
+    with open(model_path, 'rb') as f:
+        model = pickle.load(f)
+except Exception as e:
+    st.error(f"Failed to load model: {e}")
+    raise e
 
 if selected == "Homepage":
     st.title("Crop Yield Predictor🌱")
