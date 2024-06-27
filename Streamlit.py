@@ -5,6 +5,8 @@ import pickle
 from streamlit_option_menu import option_menu
 import os
 import sklearn
+from sklearn.extrenals import joblib
+import joblib
 
 st.sidebar.title("Crop Yield Predictor")
 
