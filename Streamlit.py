@@ -73,9 +73,8 @@ By following these steps, you can leverage the power of machine learning to get 
 
 if selected == "Crop Yield Predictor":
 
-    # Load the model from the pickle file
-    with open('ensemble.sav', 'rb') as file:
-        ensemble = pickle.load(file)
+    working_dir = os.path.dirname(os.path.abspath(__file__))
+    model = pickle.load(open(f'{working_dir}/ensemble.sav', 'rb'))
 
     # Define the options for each dropdown
     states = ['Andaman and Nicobar Islands', 'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chandigarh', 'Chhattisgarh', 
@@ -124,7 +123,7 @@ if selected == "Crop Yield Predictor":
                 st.error(f"Feature shape mismatch, expected: {expected_num_features}, got: {input_features.shape[1]}")
             else:
                 # Make prediction
-                predicted_yield = ensemble.predict(input_features)[0]  # Call your prediction function
+                predicted_yield = model.predict(input_features)[0]  # Call your prediction function
 
                 # Display prediction
                 st.header('Predicted Crop Yield')
