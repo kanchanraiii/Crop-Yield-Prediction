@@ -74,7 +74,7 @@ By following these steps, you can leverage the power of machine learning to get 
 if selected == "Crop Yield Predictor":
 
     # Load the model from the pickle file
-    with open('ensemble.pkl', 'rb') as file:
+    with open('ensemble.sav', 'rb') as file:
         ensemble = pickle.load(file)
 
     # Define the options for each dropdown
