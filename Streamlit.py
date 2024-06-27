@@ -4,6 +4,7 @@ import pandas as pd
 import pickle
 from streamlit_option_menu import option_menu
 import os
+import sklearn
 
 st.sidebar.title("Crop Yield Predictor")
 
