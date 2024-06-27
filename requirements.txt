@@ -3,4 +3,3 @@ numpy
 pandas
 streamlit-option-menu
 joblib
-pickle
